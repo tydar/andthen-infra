@@ -4,7 +4,7 @@ CREATE DATABASE andthen;
 
 CREATE TABLE users (
 	id integer PRIMARY KEY,
-	username varchar NOT NULL,
+	username varchar NOT NULL UNIQUE,
 	salt varchar NOT NULL,
 	password varchar NOT NULL
 );
