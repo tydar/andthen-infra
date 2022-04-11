@@ -3,9 +3,8 @@ CREATE DATABASE andthen;
 \connect andthen;
 
 CREATE TABLE users (
-	id integer PRIMARY KEY,
+	id serial PRIMARY KEY,
 	username varchar NOT NULL UNIQUE,
-	salt varchar NOT NULL,
 	password varchar NOT NULL
 );
 
