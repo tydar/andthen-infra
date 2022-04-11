@@ -7,3 +7,15 @@ services:
       POSTGRES_PASSWORD: temporary_password
     ports:
       - 5432:5432
+
+  auth:
+    image: andthen-auth
+    restart: always
+    environment:
+      DATABASE_URL: postgres://andthen_auth:temporary_password@db:5432/andthen
+
+  gateway:
+    build: ./gateway-andthen/
+    restart: always
+    ports:
+      - 80:80
