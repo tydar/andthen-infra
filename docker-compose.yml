@@ -19,3 +19,12 @@ services:
     restart: always
     ports:
       - 80:80
+
+  players:
+    image: andthen-players
+    restart: always
+    environment:
+      PGUSER: andthen_players
+      PGHOST: db
+      PGPASSWORD: temporary_password
+      PGDATABASE: andthen
