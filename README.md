@@ -21,16 +21,16 @@ Haproxy configured using `haproxy.cfg`.
 
 ## Microservices
 
-* [Auth](github.com/tydar/andthen-auth)
+* [Auth](https://github.com/tydar/andthen-auth)
 	* Written in Go
 	* Hand-rolled JWT implementation (so, probably not secure)
 	* Stateless auth & refresh token system.
 	* Interacts with other services using asynchronous communications via PG listen/notify.
-* [Players](github.com/tydar/andthen-players)
+* [Players](https://github.com/tydar/andthen-players)
 	* Express
 	* Handles player's identity for game purposes.
 	* Matches users authenticated user ID to a player ID and provides a JWT wrapping this info.
-* [Games](github.com/tydar/andthen-games)
+* [Games](https://github.com/tydar/andthen-games)
  	* Express
 	* Handles the play of games
 	* Matches users to games
