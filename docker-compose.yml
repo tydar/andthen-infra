@@ -11,18 +11,26 @@ services:
   auth:
     image: andthen-auth
     restart: always
+    depends_on:
+      - db
     environment:
       DATABASE_URL: postgres://andthen_auth:temporary_password@db:5432/andthen
 
   gateway:
     build: ./gateway-andthen/
     restart: always
+    depends_on:
+      - players
+      - games
+      - auth
     ports:
       - 80:80
 
   players:
     image: andthen-players
     restart: always
+    depends_on:
+      - db
     environment:
       PGUSER: andthen_players
       PGHOST: db
@@ -32,6 +40,8 @@ services:
   games:
     image: andthen-games
     restart: always
+    depends_on:
+      - db
     environment:
       PGUSER: andthen_games
       PGHOST: db
