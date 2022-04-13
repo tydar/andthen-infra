@@ -1,4 +1,9 @@
 # And Then infrastructure
+
+And Then is a simple web game developed using a microservice architecture. Two or more players collaboratively create a short story by taking turns adding words.
+
+It would certainly be easier to write this using a monolithic architecture. The microservices are not necessary. But I have been curious about the execution of microservice-architected software and though a simple game was a fun way to learn a bit more, practically.
+
 To run an instance of And Then, simply `docker-compose up`. Currently configured for local development.
 
 Cross project opeartional TODOs before deploying to a production infrastructure:
