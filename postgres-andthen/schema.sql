@@ -24,3 +24,25 @@ CREATE ROLE andthen_players LOGIN;
 ALTER ROLE andthen_players WITH PASSWORD 'temporary_password';
 
 ALTER TABLE players OWNER TO andthen_players;
+
+CREATE TABLE games (
+	id serial PRIMARY KEY,
+	owner_id int NOT NULL,
+	player_ids int[] NOT NULL,
+	words_per_move int NOT NULL,
+	total_words_allowed int NOT NULL,
+	current_word_index int NOT NULL
+);
+
+CREATE TABLE moves (
+	id serial PRIMARY KEY,
+	game_id int NOT NULL,
+	player_id int NOT NULL,
+	index_in_story int NOT NULL
+);
+
+CREATE ROLE andthen_games LOGIN;
+ALTER ROLE andthen_games WITH PASSWORD 'temporary_password';
+
+ALTER TABLE games OWNER TO andthen_games;
+ALTER TABLE moves OWNER TO andthen_games;

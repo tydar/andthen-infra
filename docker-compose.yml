@@ -28,3 +28,12 @@ services:
       PGHOST: db
       PGPASSWORD: temporary_password
       PGDATABASE: andthen
+
+  games:
+    image: andthen-games
+    restart: always
+    environment:
+      PGUSER: andthen_games
+      PGHOST: db
+      PGPASSWORD: temporary_password
+      PGDATABASE: andthen
