@@ -31,14 +31,16 @@ CREATE TABLE games (
 	player_ids int[] NOT NULL,
 	words_per_move int NOT NULL,
 	total_words_allowed int NOT NULL,
-	current_word_index int NOT NULL
+	current_word_index int NOT NULL,
+	created_at timestamp NOT NULL
 );
 
 CREATE TABLE moves (
 	id serial PRIMARY KEY,
 	game_id int NOT NULL,
 	player_id int NOT NULL,
-	index_in_story int NOT NULL
+	index_in_story int NOT NULL,
+	created_at timestamp NOT NULL
 );
 
 CREATE ROLE andthen_games LOGIN;
