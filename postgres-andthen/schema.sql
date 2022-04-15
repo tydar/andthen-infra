@@ -30,8 +30,8 @@ CREATE TABLE games (
 	owner_id int NOT NULL,
 	player_ids int[] NOT NULL,
 	words_per_move int NOT NULL,
-	total_words_allowed int NOT NULL,
-	current_word_index int NOT NULL,
+	total_moves_allowed int NOT NULL,
+	current_move_index int NOT NULL,
 	created_at timestamp NOT NULL
 );
 
@@ -40,7 +40,8 @@ CREATE TABLE moves (
 	game_id int NOT NULL,
 	player_id int NOT NULL,
 	index_in_story int NOT NULL,
-	created_at timestamp NOT NULL
+	created_at timestamp NOT NULL,
+	words varchar NOT NULL
 );
 
 CREATE ROLE andthen_games LOGIN;
