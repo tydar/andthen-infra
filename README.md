@@ -6,10 +6,10 @@ It would be more straightforward to write this using a monolithic architecture b
 
 To run an instance of And Then, simply `docker-compose up`. Currently configured for local development.
 
-Cross project opeartional TODOs before deploying to a production infrastructure:
+Cross project operational TODOs before deploying to a production infrastructure:
 * Update JWT secrets to be secrets.
 * Update database credentials to be secret.
-I'm sure there are others...
+...
 
 ## Database
 
